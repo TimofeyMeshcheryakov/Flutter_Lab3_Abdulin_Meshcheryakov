@@ -5,20 +5,31 @@ const startAlignment = Alignment.topCenter;
 const endAlignment = Alignment.bottomCenter;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  final Color colors1;
+  final Color colors2;
+  final Color colors3;
+  const GradientContainer(
+    this.colors1,
+    this.colors2,
+    this.colors3, {
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.white, Colors.blue, Colors.red],
+          colors: [colors1, colors2, colors3],
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
       child: Center(
-        child: StyledText("Hello world!"),
-      ),    
+        child: Image.asset('assets/images/dice-1.png',
+        width: 300,
+        ),
+      ),
     );
   }
 }
